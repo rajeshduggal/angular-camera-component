@@ -8,6 +8,7 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 export class CameraComponent implements AfterViewInit {
 
   @ViewChild('video') video;
+  blur: boolean;
 
   constructor() { }
 
@@ -21,7 +22,11 @@ export class CameraComponent implements AfterViewInit {
   }
 
   getStyles() {
-    let filter = 'blur(5px)';
+    let filter = '';
+
+    if (this.blur) {
+      filter += 'blur(5px)';
+    }
 
     return {
       filter
