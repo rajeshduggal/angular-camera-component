@@ -20,4 +20,12 @@ export class CameraComponent implements AfterViewInit {
     });
   }
 
+  getStyles() {
+    let filter = 'blur(5px)';
+
+    return {
+      filter
+    }
+  }
+
 }
